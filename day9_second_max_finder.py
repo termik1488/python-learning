@@ -1,9 +1,18 @@
+"""
+Finds the second largest unique number from user input.
+Handles edge cases (empty list, duplicates).
+"""
 def get_numbers(): 
     numbers = []
     while True:
         number = input("Введи число (Enter щоб завершити): ")
         if number == "": 
             break 
+        try:
+            number = int(number)
+        except:
+            print("Введи коректне число!")
+            continue
         numbers.append(number) 
     return numbers
 def find_second_max(numbers):
